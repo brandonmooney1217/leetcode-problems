@@ -70,14 +70,17 @@ def create_problem_structure(category, problem_name):
     return problem_dir, test_dir, next_number
 
 
-def create_solution_file(problem_dir, problem_name, category, local_number):
+def create_solution_file(problem_dir, problem_name, category, local_number, leetcode_number=None):
     """Create the solution.py file with basic template."""
+    leetcode_num = leetcode_number if leetcode_number else "?"
+    leetcode_url = f"https://leetcode.com/problems/{problem_name.lower().replace(' ', '-')}/" if leetcode_number else "?"
+    
     content = f'''"""
-LeetCode Problem: ?. {problem_name}
+LeetCode Problem: {leetcode_num}. {problem_name}
 
 Difficulty: ?
 Category: {category}
-URL: ?
+URL: {leetcode_url}
 
 Problem Description:
 Add problem description here.
@@ -137,12 +140,13 @@ if __name__ == "__main__":
         f.write(content)
 
 
-def create_test_file(test_dir, problem_name, category, local_number):
+def create_test_file(test_dir, problem_name, category, local_number, leetcode_number=None):
     """Create the test_solution.py file with basic template."""
     sanitized_name = sanitize_filename(problem_name)
+    leetcode_num = leetcode_number if leetcode_number else "?"
     
     content = f'''"""
-Unit tests for LeetCode Problem: ?. {problem_name}
+Unit tests for LeetCode Problem: {leetcode_num}. {problem_name}
 """
 
 import unittest
@@ -223,13 +227,16 @@ if __name__ == "__main__":
         f.write(content)
 
 
-def create_readme_file(problem_dir, problem_name):
+def create_readme_file(problem_dir, problem_name, leetcode_number=None):
     """Create the README.md file with basic template."""
-    content = f"""# ?. {problem_name}
+    leetcode_num = leetcode_number if leetcode_number else "?"
+    leetcode_url = f"https://leetcode.com/problems/{problem_name.lower().replace(' ', '-')}/" if leetcode_number else "?"
+    
+    content = f"""# {leetcode_num}. {problem_name}
 
 **Difficulty:** ?  
 **Category:** ?  
-**URL:** [LeetCode](?)
+**URL:** [LeetCode]({leetcode_url})
 
 ## Problem Description
 
@@ -267,6 +274,17 @@ def main():
     print("🚀 New LeetCode Problem")
     print("=" * 25)
     
+    # Get LeetCode problem number
+    while True:
+        problem_number = input("Enter LeetCode problem number: ").strip()
+        if not problem_number:
+            print("❌ Problem number cannot be empty!")
+            continue
+        if not problem_number.isdigit():
+            print("❌ Problem number must be a number!")
+            continue
+        break
+    
     # Get problem name
     problem_name = input("Enter problem name: ").strip()
     if not problem_name:
@@ -287,10 +305,10 @@ def main():
     # Create directory structure
     problem_dir, test_dir, local_number = create_problem_structure(category, problem_name)
     
-    # Create files
-    create_solution_file(problem_dir, problem_name, category, local_number)
-    create_test_file(test_dir, problem_name, category, local_number)
-    create_readme_file(problem_dir, problem_name)
+    # Create files with LeetCode problem number
+    create_solution_file(problem_dir, problem_name, category, local_number, problem_number)
+    create_test_file(test_dir, problem_name, category, local_number, problem_number)
+    create_readme_file(problem_dir, problem_name, problem_number)
     
     print(f"✅ Successfully created problem template:")
     print(f"   📁 Problem: {problem_dir}")
