@@ -48,11 +48,11 @@ def main():
     # TODO: Add test cases here
     # Test case 1
     # result = solution.solve()
-    # print(f"Test 1 - Expected: ?, Got: {result}")
+    # print(f"Test 1 - Expected: ?, Got: {{result}}")
     
     # Test case 2
     # result = solution.solve()
-    # print(f"Test 2 - Expected: ?, Got: {result}")
+    # print(f"Test 2 - Expected: ?, Got: {{result}}")
 
 
 if __name__ == "__main__":

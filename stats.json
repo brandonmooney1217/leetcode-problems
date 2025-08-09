@@ -1,0 +1,81 @@
+{
+  "total_problems": 2,
+  "solved_problems": 2,
+  "unsolved_problems": 0,
+  "completion_rate": 100.0,
+  "by_difficulty": {
+    "Unknown": 1,
+    "Medium": 1
+  },
+  "solved_by_difficulty": {
+    "Unknown": 1,
+    "Medium": 1
+  },
+  "categories_summary": {
+    "two_pointers": {
+      "total": 0,
+      "solved": 0,
+      "completion_rate": 0.0
+    },
+    "strings": {
+      "total": 0,
+      "solved": 0,
+      "completion_rate": 0.0
+    },
+    "trees": {
+      "total": 0,
+      "solved": 0,
+      "completion_rate": 0.0
+    },
+    "backtracking": {
+      "total": 0,
+      "solved": 0,
+      "completion_rate": 0.0
+    },
+    "hash_tables": {
+      "total": 0,
+      "solved": 0,
+      "completion_rate": 0.0
+    },
+    "dynamic_programming": {
+      "total": 0,
+      "solved": 0,
+      "completion_rate": 0.0
+    },
+    "math": {
+      "total": 0,
+      "solved": 0,
+      "completion_rate": 0.0
+    },
+    "sliding_window": {
+      "total": 0,
+      "solved": 0,
+      "completion_rate": 0.0
+    },
+    "stack_queue": {
+      "total": 0,
+      "solved": 0,
+      "completion_rate": 0.0
+    },
+    "arrays": {
+      "total": 2,
+      "solved": 2,
+      "completion_rate": 100.0
+    },
+    "linked_lists": {
+      "total": 0,
+      "solved": 0,
+      "completion_rate": 0.0
+    },
+    "graphs": {
+      "total": 0,
+      "solved": 0,
+      "completion_rate": 0.0
+    },
+    "sorting_searching": {
+      "total": 0,
+      "solved": 0,
+      "completion_rate": 0.0
+    }
+  }
+}

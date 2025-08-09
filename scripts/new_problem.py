@@ -104,7 +104,7 @@ def create_problem_files(problem_dir, test_dir, problem_data):
 
 **Difficulty:** {problem_data['difficulty']}  
 **Category:** {problem_data['category']}  
-**URL:** [LeetCode]({problem_data.get('problem_url', 'https://leetcode.com/problems/' + sanitize_filename(problem_data['problem_name']).replace('_', '-') + '/')})
+**URL:** [LeetCode](https://leetcode.com/problems/{problem_data['problem_url']}/)
 
 ## Problem Description
 
